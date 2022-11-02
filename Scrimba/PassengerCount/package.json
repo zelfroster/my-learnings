@@ -1,0 +1,15 @@
+{
+  "name": "passengercount",
+  "version": "1.0.0",
+  "description": "Scrimba Project",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./input.css -o ./style.css",
+    "watch": "npx tailwindcss -i ./input.css -o ./style.css --watch"
+  },
+  "author": "Sumit",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.1.4"
+  }
+}

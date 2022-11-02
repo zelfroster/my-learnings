@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title></title>
+</head>
+<body>
+  <main id="container" class="min-h-screen flex items-center justify-center bg-veryDarkBlue">
+    <div class="flex flex-col items-center justify-between p-8 gap-6 bg-darkBlue rounded-2xl shadow-3xl">
+      <div class="flex flex-col items-center justify-between gap-4 ">
+        <h1 class="text-4xl text-white">Passenger Counter</h1>
+        <p id="show-count"class="text-4xl text-cyan-400 px-8 py-2 rounded-lg border-2 border-white">0</p>
+      </div>
+      <div class="flex flex-col items-center justify-center w-44 gap-4 font-semibold text-lg">
+        <div class="flex items-center w-64 gap-4">
+          <button id="inc-btn" class="w-full py-2 bg-gradient-to-r from-veryLightRed to-lightRed 
+            text-white rounded-lg hover:shadow-2xl hover:bg-gradient-to-l transition ease-in-out" 
+            onclick=incCount()>Increment + </button>
+          <button id="dec-btn" class="w-full py-2 bg-gradient-to-r from-veryLightRed to-lightRed 
+            text-white rounded-lg hover:shadow-2xl hover:bg-gradient-to-l transition ease-in-out" 
+            onclick=decCount()>Decrement - </button>
+        </div>
+        <button class="w-full py-2 bg-gradient-to-r from-cyan-400 to-green-400 
+          text-darkBlue rounded-lg hover:shadow-2xl hover:bg-gradient-to-l" onclick=addCount()>Add to Count</button>
+      </div>
+      <div class="flex items-center gap-4">
+        <p class="text-3xl font-semibold text-white">Total Count :</p>
+        <p class="text-3xl font-semibold text-white" id="total-count">0</p>
+      </div>
+      <button id="clear-btn" class="font-semibold text-xl w-full py-2 bg-gradient-to-r from-cyan-400 to-green-400 
+        text-darkBlue rounded-lg hover:shadow-2xl hover:bg-gradient-to-l" onclick=clearCount()>Clear Count</button>
+    </div>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>

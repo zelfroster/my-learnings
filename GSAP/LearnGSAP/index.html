@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./script.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js" integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 40px;
+    }
+    .header {
+      height: 15vh;
+      background-color: #f00;
+    }
+    .links {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .content {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sidebar {
+      width: 10vw;
+      height: 70vh;
+      background-color: green;
+    }
+    .btn {
+      padding: 20px 40px;
+      font-size: 40px;
+      border-radius: 10px;
+      box-shadow: 1px 1px 1px 1px #222, -2px -2px 1px 1px #ddd;
+      border: none;
+    }
+    .btn:active {
+      box-shadow: 1px 1px 1px 1px #888, -1px -1px 1px 1px #888;
+    }
+    .footer {
+      height: 15vh;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="links">
+      <div class="link">Link 1</div>
+      <div class="link">Link 2</div>
+      <div class="link">Link 3</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="sidebar left"></div>
+    <button class="btn">Reverse!</button>
+    <div class="sidebar right"></div>
+  </div>
+  <div class="footer"></div>
+</body>
+</html>
