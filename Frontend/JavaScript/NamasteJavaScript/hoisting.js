@@ -4,10 +4,10 @@ console.log("----------------Values before declaration----------------")
 getName()
 console.log(x)
 console.log(getName)
-//If we log the values before declaring the variables
-//then it will print 'undefined' for variables 
-//and will print the entire function for functions
-
+/*  
+If we log the values before declaring the variables then it will print 
+'undefined' for variables and will print the entire function for functions 
+*/
 var x = 7;
 
 function getName() {
