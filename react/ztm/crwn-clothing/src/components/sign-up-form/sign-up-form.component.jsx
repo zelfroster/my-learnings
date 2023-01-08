@@ -1,3 +1,5 @@
+{/* import { useEffect } from 'react' */}
+{/* import { getRedirectResult } from 'firebase/auth' */}
 import { useState } from 'react'
 import {
   createAuthUserWithEmailAndPassword,
@@ -15,6 +17,17 @@ const defaultFormFields = {
 }
 
 const SignUpForm = () => {
+  {/* useEffect(() => { */}
+  {/*   const logGoogleRedirectUser = async () => { */}
+  {/*     const response = await getRedirectResult(auth) */}
+  {/*     if (response) { */}
+  {/*       const userDocRef = await createUserDocumentFromAuth(response.user); */}
+  {/*       console.log(userDocRef) */}
+  {/*     } */}
+  {/*   } */}
+  {/*   logGoogleRedirectUser() */}
+  {/* }, []) */}
+
   const [formFields, setFormFields] = useState(defaultFormFields)
 
   const { displayName, email, password, confirmPassword } = formFields
@@ -30,8 +43,8 @@ const SignUpForm = () => {
       return;
     }
     try {
-      const response = await createAuthUserWithEmailAndPassword(email, password)
-      await createUserDocumentFromAuth(response.user, { displayName })
+      const { user } = await createAuthUserWithEmailAndPassword(email, password)
+      await createUserDocumentFromAuth(user, { displayName })
       resetFormFields();
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
@@ -84,6 +97,9 @@ const SignUpForm = () => {
         />
         <Button type="submit">Sign Up</Button>
       </form>
+      {/* <button type="button" onClick={signInWithGoogleRedirect}> */}
+      {/*   Sign-in with Google Redirect */}
+      {/* </button> */}
     </div>
   )
 }

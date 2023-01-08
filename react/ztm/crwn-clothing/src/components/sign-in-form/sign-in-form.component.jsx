@@ -1,13 +1,14 @@
-{/* import { useEffect } from 'react' */}
-{/* import { getRedirectResult } from 'firebase/auth' */}
 import { useState } from 'react'
+
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword
 } from '../../utils/firebase/firebase.utils'
+
 import FormInput from '../../components/form-input/form-input.component'
 import Button from '../../components/button/button.component'
+
 import './sign-in-form.styles.scss'
 
 const defaultFormFields = {
@@ -16,23 +17,12 @@ const defaultFormFields = {
 }
 
 const SignInForm = () => {
-  {/* useEffect(() => { */}
-  {/*   const logGoogleRedirectUser = async () => { */}
-  {/*     const response = await getRedirectResult(auth) */}
-  {/*     if (response) { */}
-  {/*       const userDocRef = await createUserDocumentFromAuth(response.user); */}
-  {/*       console.log(userDocRef) */}
-  {/*     } */}
-  {/*   } */}
-  {/*   logGoogleRedirectUser() */}
-  {/* }, []) */}
-  const signInWithGoogle = async () => {
-    const response = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(response.user);
-  }
-
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
+
+  const signInWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -44,10 +34,9 @@ const SignInForm = () => {
   }
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     try {
-      const response = await signInAuthUserWithEmailAndPassword(email, password)
-      console.log(response)
+      const { user } = await signInAuthUserWithEmailAndPassword(email, password)
       resetFormFields()
     } catch (error) {
       switch (error.code) {
@@ -94,9 +83,6 @@ const SignInForm = () => {
           </Button>
         </div>
       </form>
-      {/* <button type="button" onClick={signInWithGoogleRedirect}> */}
-      {/*   Sign-in with Google Redirect */}
-      {/* </button> */}
     </div>
   )
 }
